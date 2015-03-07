@@ -1,12 +1,19 @@
 package com.thelmkay.hannotifier;
 
+import android.app.NotificationManager;
+import android.content.Context;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +42,26 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendNotification(View view){
+        EditText editText = (EditText)findViewById(R.id.editText);
+        String text = editText.getText().toString();
+        Log.d("HanNotifier","text is "+text);
+
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)//needs a fucking icon
+                        .setSmallIcon(R.drawable.btn_check_buttonless_on)
+                        .setContentTitle("My notification")
+                        .setContentText("Hello World!");
+
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+// mId allows you to update the notification later on.
+        mNotificationManager.notify(1, mBuilder.build());
+
+
+        Log.d("HanNotifier","text is "+text);
     }
 }
