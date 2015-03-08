@@ -22,6 +22,8 @@ public:
 private slots:
     void on_sendBtn_clicked();
 
+    void on_connectBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<QSerialPortInfo> serialInfo();
