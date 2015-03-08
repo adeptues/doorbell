@@ -34,3 +34,8 @@ void MainWindow::on_sendBtn_clicked()
 {
 
 }
+
+void MainWindow::on_connectBtn_clicked()
+{
+
+}
