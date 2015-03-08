@@ -5,7 +5,9 @@
 #include <QSerialPortInfo>
 #include <QDebug>
 #include <QVariant>
+#include <memory>
 
+#include "serialthread.h"
 Q_DECLARE_METATYPE(QSerialPortInfo)
 namespace Ui {
 class MainWindow;
@@ -24,9 +26,14 @@ private slots:
 
     void on_connectBtn_clicked();
 
+public slots:
+    void onMessageRecieved(const QString text);
+
 private:
     Ui::MainWindow *ui;
     QList<QSerialPortInfo> serialInfo();
+    std::unique_ptr<SerialThread> workerThread;
+    void connectSignalSlots();
 };
 
 #endif // MAINWINDOW_H

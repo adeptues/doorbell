@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->portBox->addItem(port.portName(),QVariant::fromValue(port));
     }
     // get data back this->ui->combobox->itemData(x).value<MyClass*>();
+
+
+    connectSignalSlots();
 }
 
 MainWindow::~MainWindow()
@@ -30,6 +33,10 @@ QList<QSerialPortInfo> MainWindow::serialInfo(){
 
 }
 
+void MainWindow::connectSignalSlots(){
+    //Signal slot connections go here
+}
+
 void MainWindow::on_sendBtn_clicked()
 {
     //TODO send message here to serial
@@ -37,5 +44,16 @@ void MainWindow::on_sendBtn_clicked()
 
 void MainWindow::on_connectBtn_clicked()
 {
+    int index = ui->portBox->currentIndex();
+    int baudRate = 9600;
+    QSerialPortInfo info = ui->portBox->itemData(index).value<QSerialPortInfo>();
+    //SET worker thread
+
     //TODO acquire serial connection here
+}
+
+void MainWindow::onMessageRecieved(const QString text){
+    qDebug() << "Received message text from serial: " << text;
+    ui->textArea->append(text);
+
 }
