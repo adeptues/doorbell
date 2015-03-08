@@ -30,6 +30,14 @@
             android:text="@string/notify_btn"
             android:id="@+id/button"
             android:onClick="sendNotification" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recieve_btn"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal"
+            android:onClick="recievedMessage" />
     </LinearLayout>
 
 </RelativeLayout>
