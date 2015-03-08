@@ -32,10 +32,10 @@ QList<QSerialPortInfo> MainWindow::serialInfo(){
 
 void MainWindow::on_sendBtn_clicked()
 {
-
+    //TODO send message here to serial
 }
 
 void MainWindow::on_connectBtn_clicked()
 {
-
+    //TODO acquire serial connection here
 }
