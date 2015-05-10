@@ -14,3 +14,6 @@ plays a loud sound
 
 use the python scripts for protoypeing the idea then use qt c++ for desktop
 client on all platforms with snore notify
+
+
+## Android emulator netowork config TODO
