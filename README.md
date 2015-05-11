@@ -17,3 +17,9 @@ client on all platforms with snore notify
 
 
 ## Android emulator netowork config TODO
+
+
+##TODO list 
+
+Make xbee broker python oop provide mappings from xbee codes to messages
+create MessageResponse class which takes a code param in the constructor
