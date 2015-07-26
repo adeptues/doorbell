@@ -33,9 +33,9 @@ def doWork():
     while True:
         try:
         #        response = xbee.wait_read_frame()
-            response = int(ser.read())
+            response = ord(ser.read())
             message  = getMessage(response)
-            print "response from xbee "+response
+            print "response from xbee "+str(response)
             print "Sending message "+message
             client.publish(channel,message)
 
